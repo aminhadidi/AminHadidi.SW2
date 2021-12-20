@@ -1,0 +1,17 @@
+{%extends 'base.html'%}
+{%block title%}
+{{turn.customer_name}} نوبت
+{%endblock%}
+{%block content%}
+<div class="turn detail">
+  <div class="turn">
+    <h2>
+        <p class="nameperson">{{Turn_person.customer_name}}</p>
+        <p class="small">{{Turn_person.date}}</p>
+        <p class="small">{{Turn_person.name_barber}}</p>
+        <p style="font-size:10pt">{{Turn_person.registration_time}}</p>
+    </h2>
+  </div>
+
+</div>
+{%endblock%}

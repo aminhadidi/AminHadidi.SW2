@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{%block content%}
+
+<h1  style="margin:20pt">ثبت نام </h1>
+<div>
+
+
+<form   class="site-form" action="{%url 'accounts:signup'%}" method="post">
+  {{form}}
+  {% csrf_token %}
+  <input type="submit" name="signup" value="signup">
+</form>
+</div>
+{%endblock%}

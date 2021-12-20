@@ -21,7 +21,7 @@
   <header class="shadow">
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
       <div class="container">
-        <a class="navbar-brand" href="#">AminHadidi</a>
+        <a class="navbar-brand" href="{% url 'home' %}">AminHadidi</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -51,7 +51,10 @@
               <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">درباره ما</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">تماس با ما</a>
+              <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
+                {% csrf_token %}
+                <button type="submit">logout</button>
+              </form>
             </li>
           </ul>
 

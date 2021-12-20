@@ -8,7 +8,7 @@ Turns
       {% for turn in Turns %}
       <h2>
 
-          <a href="#" class="nameperson">{{turn.customer_name}}</a>
+          <a href="{% url 'Turns:detail' slug=turn.slug %}" class="nameperson">{{turn.customer_name}}</a>
           <p class="small">{{turn.date}}</p>
           <p class="small">{{turn.name_barber}}</p>
           <p style="font-size:10pt">{{turn.registration_time}}</p>
