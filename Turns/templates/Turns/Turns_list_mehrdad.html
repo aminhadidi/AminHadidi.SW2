@@ -1,19 +1,32 @@
 {%extends 'base.html'%}
+{% load static %}
 {%block title%}
 Turns Mehrdad
 {%endblock%}
 {%block content%}
-  <section>
+<section class="mt-5  me-5 ms-5">
+  <div class="turnsha">
     {% for turn in Turns_mehrdad %}
-    <h2>
+
 
       {% if turn.name_barber == '2' %}
-        <a href="{% url 'Turns:detail' slug=turn.slug %}" class="nameperson">{{turn.customer_name}}</a>
-        <p class="small">{{turn.date}}</p>
-        <p class="small">{{turn.name_barber}}</p>
-        <p style="font-size:10pt">{{turn.registration_time}}</p>
+        <a href="{% url 'Turns:detail' slug=turn.slug %}" class="btn btn-outline-success">
+        <p class="nameperson text-center">{{turn.customer_name}}</p>
+        <p class="small">زمان : {{turn.date}}</p>
+        <p class="small">كد آرايشگر : {{turn.name_barber}}</p>
+        <p style="font-size:10pt">زمان ثبت : {{turn.registration_time}}</p>
+        <p class=""> <span class="badge text-secondary  bg-warning">رزرو توسط {{turn.author.username}}</span></p>
+        </a>
       {% endif %}
-    </h2>
+
     {% endfor %}
+      </div>
   </section>
+  <div class="d-flex justify-content-center">
+
+    <div class="col-md-3  offset-md-2 mt-5 mt-md-5">
+      <img class="img-fluid mx-auto d-block" src="{% static 'img/7.svg' %}" alt="Image-Web-Developer">
+    </div>
+
+  </div>
 {%endblock%}

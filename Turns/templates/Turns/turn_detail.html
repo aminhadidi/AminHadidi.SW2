@@ -1,17 +1,33 @@
 {%extends 'base.html'%}
+{% load static %}
 {%block title%}
 {{turn.customer_name}} نوبت
 {%endblock%}
 {%block content%}
-<div class="turn detail">
+<!-- <div class="turn detail">
   <div class="turn">
     <h2>
         <p class="nameperson">{{Turn_person.customer_name}}</p>
         <p class="small">{{Turn_person.date}}</p>
         <p class="small">{{Turn_person.name_barber}}</p>
-        <p style="font-size:10pt">{{Turn_person.registration_time}}</p>
+        <p style="font-size:10pt"> {{Turn_person.registration_time}}</p>
+        <p class="author">رزرو توسط {{turn.author.username}}</p>
     </h2>
   </div>
 
+</div> -->
+<div class="text-center d-flex mt-5 justify-content-center">
+
+
+<div class="card" style="width: 25rem;">
+  <img class="card-img-top" src="{% static 'img/reserved.svg' %}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title text-success mb-5">{{Turn_person.customer_name}}</h5>
+    <p class="card-text text-secondary">زمان نوبت :{{Turn_person.date}}</p>
+    <p class="card-text text-secondary">این نوبت در تاریخ {{Turn_person.registration_time}} ثبت شده است </p>
+    <p class="card-text text-secondary">كد آرايشگر :{{Turn_person.name_barber}}</p>
+    <a href="{% url 'Turns:Turns_list'%}" class="btn btn-outline-info">برگشت به صفحه نوبت ها</a>
+  </div>
+</div>
 </div>
 {%endblock%}

@@ -9,13 +9,13 @@ AminHadidi
       <div class="row align-items-center">
         <div class="col-md-5">
           <h4 class="fw-bold">آرایشگاه امین</h4>
-          <h5 class="fw-bold text-primary my-4">AminHadidi</h5>
-          <p>ارائه دهنده انواع خدمات مو و زيبايي</p>
-          <button type="button" class="btn btn-primary">لورم ایپسوم</button>
-          <button type="button" class="btn btn-outline-dark ms-3">لورم ایپسوم</button>
+          <h5 class="fw-bold text-info my-4">AminHadidi</h5>
+          <p class="text-secondary">ارائه دهنده انواع خدمات مو و زيبايي</p>
+          <a class="btn btn-outline-info" href="{% url 'Turns:Turns_list' %}">صفحه نوبت های آرایشگران</a>
+
         </div>
         <div class="col-md-5  offset-md-2 mt-5 mt-md-0">
-          <img class="img-fluid" src="{% static 'img/home.jpg' %}" alt="Image-Web-Developer">
+          <img class="img-fluid mt-5" src="{% static 'img/home.jpg' %}" alt="Image-Web-Developer">
         </div>
 
 
@@ -106,7 +106,7 @@ AminHadidi
               <p class="card-text text-muted">سابقه فعاليت در آرايشگاه امين :5 سال</p>
               <p class="card-text text-muted">تخصص:</p>
               <p class="card-text text-muted">مو هاي متوسط</p>
-              <button class="btn btn-primary mt-4">مشاهده نوبت ها</button>
+              <button class="btn" ><a class="btn btn-primary mt-4" href="{% url 'Turns:Turns_list_mehrdad'%}">مشاهده نوبت ها</a></button>
             </div>
           </div>
         </div>
@@ -120,7 +120,7 @@ AminHadidi
               <p class="card-text"> سابقه فعاليت در آرايشگاه امين : 10 سال</p>
               <p class="card-text"> تخصص: </p>
               <p class="card-text">مو هاي بلند</p>
-              <button class="btn btn-outline-light mt-4">مشاهده نوبت ها</button>
+              <button class="btn" ><a class="btn btn-dark mt-4" href="{% url 'Turns:Turns_list_amin'%}">مشاهده نوبت ها</a></button>
             </div>
           </div>
         </div>
@@ -134,7 +134,7 @@ AminHadidi
               <p class="card-text text-muted"> سابقه فعاليت در آرايشگاه امين: 2 سال</p>
               <p class="card-text text-muted"> تخصص:</p>
               <p class="card-text text-muted">مو هاي كوتاه</p>
-              <button class="btn btn-primary mt-4">مشاهده نوبت ها</button>
+              <button class="btn" ><a class="btn btn-primary mt-4" href="{% url 'Turns:Turns_list_navid'%}">مشاهده نوبت ها</a></button>
             </div>
           </div>
         </div>

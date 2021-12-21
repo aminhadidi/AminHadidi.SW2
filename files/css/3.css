@@ -39,3 +39,7 @@ body {
 .small{
   font-size: 15pt;
 }
+.turnsha{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}

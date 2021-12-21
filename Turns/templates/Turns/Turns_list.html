@@ -1,19 +1,46 @@
 {%extends 'base.html'%}
+{%load static%}
 {%block title%}
 Turns
 {%endblock%}
 {%block content%}
-  <section>
-    <div class="container2">
-      {% for turn in Turns %}
-      <h2>
+<section>
 
-          <a href="{% url 'Turns:detail' slug=turn.slug %}" class="nameperson">{{turn.customer_name}}</a>
-          <p class="small">{{turn.date}}</p>
-          <p class="small">{{turn.name_barber}}</p>
-          <p style="font-size:10pt">{{turn.registration_time}}</p>
-      </h2>
-      {% endfor %}
+<p class="text-secondary text-center" style="font-size:60pt">آرايشگران</p>
+<div class="container d-flex flex-row  mt-5 justify-content-center mb-5 mt-5">
+
+    <div class="card col-3" style="width: 18rem;">
+      <img class="card-img-top" src="{% static 'img/barber4.jfif' %}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title text-primary mb-5">امين</h5>
+        <p class="card-text">براي مشاهده نوبت ها روي دكمه زير كليك كنيد</p>
+        <a href="{% url 'Turns:Turns_list_amin'%}" class="btn btn-outline-info">مشاهده نوبت ها</a>
+      </div>
     </div>
+    <div class="card col-3" style="width: 18rem;">
+      <img class="card-img-top" src="{% static 'img/barber1.jfif' %}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title text-primary mb-5 ">مهرداد</h5>
+        <p class="card-text">براي مشاهده نوبت ها روي دكمه زير كليك كنيد</p>
+        <a href="{% url 'Turns:Turns_list_mehrdad'%}" class="btn btn-outline-info">مشاهده نوبت ها</a>
+      </div>
+    </div>
+    <div class="card col-3" style="width: 18rem;">
+      <img class="card-img-top" src="{% static 'img/barber2.jfif' %}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title text-primary mb-5">نويد</h5>
+        <p class="card-text">براي مشاهده نوبت ها روي دكمه زير كليك كنيد</p>
+        <a href="{% url 'Turns:Turns_list_navid'%}" class="btn btn-outline-info">مشاهده نوبت ها</a>
+      </div>
+    </div>
+    <div class="card col-3" style="width: 18rem;">
+      <img class="card-img-top" src="{% static 'img/barber3.jfif' %}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title text-primary mb-5">نيما</h5>
+        <p class="card-text">براي مشاهده نوبت ها روي دكمه زير كليك كنيد</p>
+        <a href="{% url 'Turns:Turns_list_nima'%}" class="btn btn-outline-info">مشاهده نوبت ها</a>
+      </div>
+    </div>
+</div>
   </section>
 {%endblock%}

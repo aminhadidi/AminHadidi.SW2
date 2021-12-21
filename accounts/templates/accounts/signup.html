@@ -1,14 +1,46 @@
 {% extends 'base.html' %}
+{% load static %}
 {%block content%}
 
-<h1  style="margin:20pt">ثبت نام </h1>
+<!-- <h1  style="margin:20pt">ثبت نام </h1>
 <div>
 
 
-<form   class="site-form" action="{%url 'accounts:signup'%}" method="post">
+<form   class="site-form border border-info text-center rounded" action="{%url 'accounts:signup'%}" method="post">
   {{form}}
   {% csrf_token %}
   <input type="submit" name="signup" value="signup">
 </form>
+</div> -->
+#-----------------
+<div class="row d-flex justify-content-center">
+
+
+<div class="col-5 text-center">
+<h1  style="margin:20pt">ثبت نام </h1>
+
+<form class="border border-info text-center rounded" action="{%url 'accounts:signup'%}" method="post">
+  <div class="form-group">
+
+  <p >نام کاربری:</p>{{form.username}}</div>
+  <div class="form-group">
+
+  <p>رمز عبور:</p>{{form.password1}} </div>
+  <div class="form-group">
+
+  <p>رمز عبور:</p>{{form.password2}} </div>
+  {% for field, errors in form.errors.items %}
+      {% for error in errors %}
+      <p class="alert alert-danger mt-3">{{error}}</p>
+      {%endfor%}
+      {%endfor%}
+  {% csrf_token %}
+  {% if request.GET.next %}
+  <input type="hidden" name="next" value="{{request.GET.next}}">
+  {% endif %}
+  <input class="btn btn-outline-primary mt-3 mb-5" type="submit" name="signup" value="ثبت نام">
+</form>
 </div>
+</div>
+
 {%endblock%}

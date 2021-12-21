@@ -1,6 +1,7 @@
-from django.shortcuts import render,HttpResponse
+from django.shortcuts import render,HttpResponse,redirect
 from . import models
 from django.contrib.auth.decorators import login_required
+from . import forms
 
 def Turns_list(request):
     turns = models.Turn.objects.all().order_by('-date')
@@ -32,4 +33,13 @@ def Turn_detail(request, slug):
     return render(request,'Turns/turn_detail.html',{'Turn_person':turn5})
 @login_required(login_url="accounts:login")
 def reservation_Turn(request):
-    return render(request,'Turns/reservation_Turn.html')
+    if request.method == 'POST':
+        form = forms.TurnsReservation(request.POST)
+        if form.is_valid:
+            instance = form.save(commit = False)
+            instance.author = request.user
+            instance.save()
+            return redirect('home')
+    else:
+        form=forms.TurnsReservation()
+    return render(request,'Turns/reservation_Turn.html',{'form':form})
